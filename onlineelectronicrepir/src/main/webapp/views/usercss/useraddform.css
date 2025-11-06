@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* CSS Reset and Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f7fa;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Form Container */
+    .form-container {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-header h1 {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .form-header p {
+        color: #7f8c8d;
+        font-size: 0.95rem;
+    }
+
+    /* Form Elements */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #2c3e50;
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background-color: #fff;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="password"]:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    input[type="text"]:hover,
+    input[type="email"]:hover,
+    input[type="number"]:hover,
+    input[type="password"]:hover {
+        border-color: #bbb;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+        background-color: #2980b9;
+    }
+
+    .submit-btn:active {
+        transform: translateY(1px);
+    }
+
+    /* Form Validation Styles */
+    input:required {
+        border-left: 3px solid #3498db;
+    }
+
+    input:invalid:not(:focus):not(:placeholder-shown) {
+        border-left-color: #e74c3c;
+    }
+
+    input:valid:not(:focus):not(:placeholder-shown) {
+        border-left-color: #2ecc71;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 576px) {
+        body {
+            padding: 15px;
+        }
+        
+        .form-container {
+            padding: 20px;
+        }
+        
+        .form-header h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Field Help Text */
+    .help-text {
+        font-size: 0.8rem;
+        color: #7f8c8d;
+        margin-top: 5px;
+        display: block;
+    }
+
+    /* Loading State */
+    .submit-btn.loading {
+        position: relative;
+        color: transparent;
+    }
+
+    .submit-btn.loading::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 2px solid transparent;
+        border-top-color: white;
+        border-radius: 50%;
+        animation: button-loading-spinner 1s ease infinite;
+    }
+
+    @keyframes button-loading-spinner {
+        from { transform: rotate(0turn); }
+        to { transform: rotate(1turn); }
+    }

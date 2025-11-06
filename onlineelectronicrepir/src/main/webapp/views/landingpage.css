@@ -1,0 +1,225 @@
+@charset "UTF-8";
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Title styling */
+h3 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    border-radius: 2px;
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    color: #333;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3e50'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+select option {
+    background: white;
+    color: #333;
+}
+
+/* Button styling */
+.action-button {
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.action-button:active {
+    transform: translateY(0);
+}
+
+/* Login type cards */
+.login-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.login-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.login-card:hover {
+    background: #e9ecef;
+    border-color: #3498db;
+    transform: translateY(-2px);
+}
+
+.login-card.selected {
+    background: white;
+    border-color: #3498db;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+}
+
+.login-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #3498db;
+}
+
+.login-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.login-card p {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    color: #7f8c8d;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e1e8ed;
+}
+
+.divider span {
+    padding: 0 15px;
+    font-size: 0.9rem;
+}
+
+/* Footer text */
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+    }
+    
+    .login-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+    }
+    
+    select, .action-button {
+        padding: 12px;
+    }
+}
